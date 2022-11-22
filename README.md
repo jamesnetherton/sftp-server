@@ -5,12 +5,12 @@ A fake SFTP server container for **_test & example purposes. It is not suitable 
 ### Build & test
 
 ```
-mvn clean verify
+./mvnw clean verify
 ```
 
 ### Container image build
 ```
-mvn clean verify
+./mvnw clean verify
 docker build -t jamesnetherton/sftp-server .
 ```
 

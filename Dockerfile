@@ -8,4 +8,4 @@ COPY --chown=185 target/*jar-with-dependencies*.jar /deployments/
 EXPOSE 2222
 USER 185
 
-ENV JAVA_APP_JAR="/deployments/fake-sftp-server-0.3.0-jar-with-dependencies.jar"
+ENV JAVA_APP_JAR="/deployments/fake-sftp-server-0.4.0-SNAPSHOT-jar-with-dependencies.jar"

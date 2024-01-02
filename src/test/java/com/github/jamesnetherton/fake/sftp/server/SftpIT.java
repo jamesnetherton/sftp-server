@@ -40,7 +40,7 @@ public class SftpIT {
     @Test
     public void testSftpServer() throws IOException {
         try (Socket socket = new Socket()) {
-            socket.connect(new InetSocketAddress("localhost", server.getMappedPort(PORT)), 5000);
+            socket.connect(new InetSocketAddress(server.getHost(), server.getMappedPort(PORT)), 5000);
         }
     }
 }

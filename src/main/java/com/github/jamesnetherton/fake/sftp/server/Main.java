@@ -1,9 +1,12 @@
 package com.github.jamesnetherton.fake.sftp.server;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Collections;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.jar.Attributes;
+import java.util.jar.Manifest;
 
 import org.apache.sshd.server.SshServer;
 import org.apache.sshd.server.keyprovider.SimpleGeneratorHostKeyProvider;
@@ -36,9 +39,15 @@ public class Main {
         ExecutorService executorService = Executors.newSingleThreadExecutor();
         executorService.submit(() -> {
             try {
+                String message = "Test SFTP Server";
+                String version = getVersion();
+                if (version != null) {
+                    message += " " + version;
+                }
+
                 sshd.start();
                 System.out.println("\u001B[31m===========================================\n");
-                System.out.println("Test SFTP server. Not for production usage!");
+                System.out.println(message + ". Not for production usage!");
                 System.out.println("\n===========================================\u001B[0m\n\n");
                 System.out.println("SFTP Server started on 0.0.0.0:2222");
             } catch (IOException e) {
@@ -56,5 +65,19 @@ public class Main {
             System.out.println("SFTP Server Stopped");
             executorService.shutdown();
         }));
+    }
+
+    private static String getVersion() {
+        try (InputStream stream = Main.class.getResourceAsStream("/META-INF/MANIFEST.MF")) {
+            if (stream == null) {
+                return null;
+            }
+
+            Manifest manifest = new Manifest(stream);
+            Attributes attributes = manifest.getMainAttributes();
+            return attributes.getValue("version");
+        } catch (IOException e) {
+            return null;
+        }
     }
 }

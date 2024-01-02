@@ -66,6 +66,9 @@
                     com.github.jamesnetherton.fake.sftp.server.Main
                   </mainClass>
                 </manifest>
+                <manifestEntries>
+                  <version>${project.version}</version>
+                </manifestEntries>
               </archive>
               <descriptorRefs>
                 <descriptorRef>jar-with-dependencies</descriptorRef>

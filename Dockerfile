@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi8/openjdk-11
+FROM registry.access.redhat.com/ubi8/openjdk-17
 
 ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en'
 ENV AB_JOLOKIA_OFF=true

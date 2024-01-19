@@ -11,6 +11,7 @@
   <properties>
     <slf4j-noop.version>2.0.11</slf4j-noop.version>
     <sshd-ftp.version>2.12.0</sshd-ftp.version>
+    <testcontainers.version>1.19.3</testcontainers.version>
 
     <maven-assembly-plugin.version>3.6.0</maven-assembly-plugin.version>
     <maven-compiler-plugin.version>3.12.1</maven-compiler-plugin.version>
@@ -33,7 +34,7 @@
     <dependency>
       <groupId>org.testcontainers</groupId>
       <artifactId>testcontainers</artifactId>
-      <version>1.19.3</version>
+      <version>${testcontainers.version}</version>
       <scope>test</scope>
     </dependency>
   </dependencies>

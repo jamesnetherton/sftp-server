@@ -10,7 +10,7 @@
 
   <properties>
     <slf4j-noop.version>2.0.13</slf4j-noop.version>
-    <sshd-ftp.version>2.12.1</sshd-ftp.version>
+    <sshd-ftp.version>2.13.1</sshd-ftp.version>
     <testcontainers.version>1.19.8</testcontainers.version>
 
     <maven-assembly-plugin.version>3.7.1</maven-assembly-plugin.version>

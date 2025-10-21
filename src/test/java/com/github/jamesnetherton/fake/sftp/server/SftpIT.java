@@ -1,8 +1,8 @@
 package com.github.jamesnetherton.fake.sftp.server;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.images.builder.ImageFromDockerfile;
 
@@ -19,7 +19,7 @@ public class SftpIT {
 
     public GenericContainer<?> server;
 
-    @Before
+    @BeforeEach
     public void before() {
         server = new GenericContainer<>(
                 new ImageFromDockerfile().withDockerfile(Paths.get("./Dockerfile"))
@@ -30,7 +30,7 @@ public class SftpIT {
         server.start();
     }
 
-    @After
+    @AfterEach
     public void after() {
         if (server != null) {
             server.stop();

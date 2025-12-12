@@ -46,7 +46,7 @@ jobs:
       - name: Checkout project
         uses: actions/checkout@v6
       - name: Download Maven Repo
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v7
         with:
           name: sftp-server
           path: ./target/fake-sftp-server-jar-with-dependencies.jar
